@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Books.Models.Library>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1> הוסף ספרייה חדשה</h1>
+
+<p>
+    <a asp-action="Create">הוסף ספריה</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>
